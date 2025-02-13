@@ -6,9 +6,11 @@
   <% @posts.each do |post| %>
     <%= render post %>
     <p>
-      <%= link_to "Show this post", post %>
+      <%= link_to "詳細を表示する", post %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New post", new_post_path %>
+<%= link_to "新しく投稿する", new_post_path %>
+
+<%= link_to "戻る", root_path %>
