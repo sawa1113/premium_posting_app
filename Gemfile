@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.2.2"
+ruby "3.2.4"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.5", ">= 7.1.5.1"
@@ -29,6 +29,10 @@ gem "jbuilder"
 gem 'devise'
 gem 'rails-i18n', '~> 7.0.0'
 gem 'devise-i18n'
+gem 'activeadmin', '~> 3.2', '>= 3.2.5'
+gem 'bootstrap', '~> 5.3', '>= 5.3.3'
+gem 'sassc'
+gem "cssbundling-rails", "~> 1.4"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
