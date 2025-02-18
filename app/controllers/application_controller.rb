@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+    # 各アクションを行う前にログインをしているか判断、ログインをしていない場合はログインページへリダイレクトする
+    before_action :authenticate_user!
 
     private
 

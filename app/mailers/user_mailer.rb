@@ -3,6 +3,7 @@ class UserMailer < ApplicationMailer
 
     def post_created(post)
         @post = post
-        mail(to: 'user@example.com', subject: '投稿が作成されました！')
+        recipient = post.user.email  # 投稿者のメールアドレスを取得
+        mail(to: recipient, subject: '投稿が作成されました！')
     end
 end
