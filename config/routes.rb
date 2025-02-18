@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -8,6 +10,10 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :posts, only: [:index]
     end
+  end
+  mount Sidekiq::Web => '/sidekiq'
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

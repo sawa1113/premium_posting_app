@@ -33,6 +33,8 @@ gem 'activeadmin', '~> 3.2', '>= 3.2.5'
 gem 'bootstrap', '~> 5.3', '>= 5.3.3'
 gem 'sassc'
 gem "cssbundling-rails", "~> 1.4"
+gem 'sidekiq'
+gem 'redis'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
@@ -60,6 +62,8 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem 'letter_opener'
+  gem 'letter_opener_web'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
