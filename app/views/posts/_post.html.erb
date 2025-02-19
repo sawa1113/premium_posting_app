@@ -9,4 +9,8 @@
     <%= post.description %>
   </p>
 
+  <p>
+    <strong>投稿者:</strong>
+    <%= post.user&.name || "不明なユーザー" %>
+  </p>
 </div>

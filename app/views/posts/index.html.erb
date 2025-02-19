@@ -4,10 +4,12 @@
 
 <div id="posts">
   <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "詳細を表示する", post %>
-    </p>
+    <% cache post do %>
+      <%= render post %>
+      <p>
+        <%= link_to "詳細を表示する", post %>
+      </p>
+    <% end %>
   <% end %>
 </div>
 
