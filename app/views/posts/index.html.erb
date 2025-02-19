@@ -1,18 +1,27 @@
-<p style="color: green"><%= notice %></p>
+<div class="container mt-4">
+  <div class="row">
+    <%# 検索フォーム（Ransack用） %>
+    <div class="col-12 mb-4">
+      <%= search_form_for @q, url: posts_path, method: :get, class: "d-flex" do |f| %>
+        <%= f.search_field :title_or_description_cont, class: "form-control me-2", placeholder: "検索..." %>
+        <%= f.submit "検索", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
 
-<h1>Posts</h1>
-
-<div id="posts">
-  <% @posts.each do |post| %>
-    <% cache post do %>
-      <%= render post %>
-      <p>
-        <%= link_to "詳細を表示する", post %>
-      </p>
+  <%# 投稿一覧 %>
+  <div class="row">
+    <% @posts.each do |post| %>
+      <% cache post do %>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <%= render post %>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
+
+  <%# 新規投稿ボタン %>
+  <div class="text-center mt-4">
+    <%= link_to "新しく投稿する", new_post_path, class: "btn btn-success" %>
+  </div>
 </div>
-
-<%= link_to "新しく投稿する", new_post_path %>
-
-<%= link_to "戻る", root_path %>
