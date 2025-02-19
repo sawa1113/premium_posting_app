@@ -106,6 +106,9 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 2.11.8, < 3)
     builder (3.3.0)
+    bullet (8.0.1)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.11)
     capybara (3.40.0)
       addressable
       matrix
@@ -375,6 +378,7 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    uniform_notifier (1.16.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.1)
@@ -405,6 +409,7 @@ DEPENDENCIES
   activeadmin (~> 3.2, >= 3.2.5)
   bootsnap
   bootstrap (~> 5.3, >= 5.3.3)
+  bullet
   capybara
   cssbundling-rails (~> 1.4)
   debug
