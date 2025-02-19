@@ -1,10 +1,4 @@
-<p style="color: green"><%= notice %></p>
+<%= render 'post', post: @post %>
 
-<%= render @post %>
-
-<div>
-  <%= link_to "投稿を編集する", edit_post_path(@post) %> |
-  <%= link_to "投稿へ戻る", posts_path %>
-
-  <%= button_to "投稿を削除する", @post, method: :delete %>
-</div>
+<%# 詳細を表示するリンクの追加 %>
+<%= link_to '投稿へ戻る', posts_path, class: 'btn btn-outline-primary' %>

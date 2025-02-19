@@ -35,6 +35,7 @@ gem 'sassc'
 gem "cssbundling-rails", "~> 1.4"
 gem 'sidekiq'
 gem 'redis'
+gem 'ransack'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
