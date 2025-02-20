@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts or /posts.json
   def index
     @q = Post.ransack(params[:q])
-    @posts = @q.result(distinct: true).includes(:user).page(params[:page]).order("created_at desc")
+    @posts = @q.result(distinct: true).includes(:user, [:image_attachment]).page(params[:page]).order("created_at desc")
   end
 
   # GET /posts/1 or /posts/1.json
@@ -66,6 +66,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :description)
+      params.require(:post).permit(:title, :description, :image)
     end
 end

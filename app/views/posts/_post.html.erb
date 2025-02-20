@@ -8,6 +8,11 @@
         <div class="card-body">
           <p class="card-text"><%= post.description %></p>
           <p class="text-muted">投稿者: <%= post.user&.name || "不明なユーザー" %></p>
+          <% if post.image.attached? %>
+            <%= resized_image_tag(post) %>
+          <% else %>
+            <p>画像なし</p>
+          <% end %>
 
           <div class="d-flex justify-content-between mt-3">
             <%# 「詳細を表示する」ボタンの表示制御 %>
