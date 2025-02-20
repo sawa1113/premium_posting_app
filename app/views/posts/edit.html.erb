@@ -1,10 +1,18 @@
-<h1>投稿を編集中</h1>
-
-<%= render "form", post: @post %>
-
-<br>
-
-<div>
-  <%= link_to "詳細を表示する", @post %> |
-  <%= link_to "投稿に戻る", posts_path %>
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header bg-warning text-white">
+          <h2 class="mb-0">投稿を編集中</h2>
+        </div>
+        <div class="card-body">
+          <%= render "form", post: @post %>
+          <div class="mt-3 d-flex justify-content-between">
+            <%= link_to "詳細を表示する", @post, class: "btn btn-primary" %>
+            <%= link_to "投稿一覧へ戻る", posts_path, class: "btn btn-secondary" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

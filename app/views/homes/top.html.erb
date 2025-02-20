@@ -1,6 +1,11 @@
-<h1>Homes#top</h1>
-<p>Find me in app/views/homes/top.html.erb</p>
-
-<%= link_to "投稿画面へ", posts_path, method: :get %>
-
-<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12 mb-4">
+            <h1>こんにちは、<%= current_user.name %>さん！</h1>
+            <p>今日も素敵な投稿をしてみませんか？</p>
+            <%# <%= link_to "プロフィール画面へ", root_path, method: :get, class: "btn btn-success" %>
+            <%= link_to "投稿画面へ", posts_path, method: :get, class: "btn btn-success" %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-success" %>
+        </div>
+    </div>
+</div>
