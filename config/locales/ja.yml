@@ -5,6 +5,7 @@ ja:
       post:
         title: タイトル
         description: 説明
+        image: 画像
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
