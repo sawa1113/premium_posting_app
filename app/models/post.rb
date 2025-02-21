@@ -23,13 +23,6 @@ class Post < ApplicationRecord
         ["title", "description"]
     end
 
-    # 画像のリサイズを定義
-    def resized_image
-        return unless image.attached?
-
-        image.variant(resize_to_limit: [300, 300]).processed
-    end
-
     private
 
     def image_content_type
