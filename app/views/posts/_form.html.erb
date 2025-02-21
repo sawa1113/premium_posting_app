@@ -22,6 +22,15 @@
   </div>
 
   <div>
+    <% if @post.image.attached? %>
+      <p>現在の画像：</p>
+      <%= image_tag @post.image.variant(resize_to_limit: [150, 150]) %>
+    <% end %>
+    <%= form.label :image, style: "display: block" %>
+    <%= form.file_field :image, direct_upload: true %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
